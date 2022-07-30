@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url(bg-intro-desktop.png);
+    background-color: hsl(0, 100%, 74%);
+    justify-content: center;
+    width: 100%;
+}
+main{
+    display: flex;
+    align-items: inherit;
+    /*margin: 30px;*/
+    justify-content: inherit;
+    gap: 35px;
+}
+.left{
+    width: 400px;
+    color: whitesmoke;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+li{
+    display: flex;
+    list-style: none;
+    padding: 8px;
+    margin: 8px 2px 2px 2px;
+    justify-content: center;
+
+}
+form{
+   border: 1px solid whitesmoke;
+   border-radius: 20px;
+   padding: 1em;
+   height: auto;
+   width: 480px;
+   margin-top: 20px;
+
+}
+input, textarea{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    width: 400px;
+    padding: 8px;
+    color: black;
+}
+input:hover:invalid{
+    border: 2px solid red;
+}
+input:hover:invalid:required{
+    background-image: url(icon-error.svg);
+    background-repeat: no-repeat;
+    background-position: 370px;
+}
+.error{
+    display: none;
+    color: red;
+}
+input:not(:placeholder-shown):not(:focus):invalid+ .error{
+    display: active;
+}
+input:enabled [type="submit"]+.error {
+    cursor: grab;
+}
+button{
+    width: 400px;
+    color: whitesmoke;
+    background-color: hsl(154, 59%, 51%);
+    border: 1px solid hsl(154, 59%, 51%);
+    border-radius: 5px;
+    padding: 8px;
+    text-align: center;
+}
+.button{
+    /*display: flex;*/
+    width: 480px;
+    background-color: hsl(248, 32%, 49%);
+    text-align: center;
+    border: 1px solid hsl(248, 32%, 49%);
+}
+.down{
+    text-align: center;
+    font-size: 11px;
+    cursor: grab;
+}
+.left p{
+    width: 400px;
+    font-size: 12px;
+}
+strong{
+    color: red;
+}
+form:invalid[type="submit"]{
+    cursor: not-allowed;
+    pointer-events: all;
+}
+form:invalid [type="submit"]:active{
+    pointer-events: none;
+}
+@media only screen and (max-width: 375px){
+   main{
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    height: auto;
+    flex-shrink: inherit;
+   } 
+   div.left, .right{
+    width: 100% !important;
+    height: auto;
+   }
+
+    
+}
